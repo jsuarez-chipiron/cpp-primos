@@ -8,14 +8,13 @@ const int N = 200000;
 
 bool is_prime(uint32_t n)
 {
-    for (uint32_t i=2; i*i<=n; i++) 
+    for (uint32_t i=2; i<(n/2)+1; i++)
     {
-        if (n % i == 0)
+        if ( (n % i) == 0 )
         {
             return false;
         }
     }
-    
     return true;
 }
 
