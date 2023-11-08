@@ -1,44 +1,36 @@
+#include <cstdint>
 #include <iostream>
-#include <vector>
-#include <string>
 
 const int N = 200000;
 /*
  * javier suarez jimenez
  */
 
-bool isPrime(int n)
+bool is_prime(uint32_t n)
 {
-    //isPrime comment
-    if ( n == 1 || n == 2 )
+    for (uint32_t i = 2; i * i <= n; i++) 
     {
-        return true;
-    }
-    else {
-        for (int i=2; i<(n/2)+1; i++)
+        if (n % i == 0)
         {
-            if ( (n % i) == 0 )
-            {
-                return false;
-            }
+            return false;
         }
-        return true;
     }
+    
+    return true;
 }
 
 int main()
 {
-    // int j = 0;
-    long long k = 0;
+    uint32_t k = 0;
     for (int i=1; i<N; i++)
     {
-        if ( isPrime(i) )
+        if ( is_prime(i) )
         {
             k += i;
-            // std::cout << ++j << ": " << i << std::endl;
+            // std::cout << ++j << ": " << i << '\n';
         }
     }
-    std::cout << k << std::endl;
+    std::cout << k << '\n';
 
     return 0;
 }
