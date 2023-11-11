@@ -6,7 +6,7 @@ const int N = 2000000;
  * javier suarez jimenez
  */
 
-bool is_prime(uint32_t n)
+bool is_prime(uint64_t n)
 {
     if (n <= 1)
     {
@@ -23,7 +23,7 @@ bool is_prime(uint32_t n)
         return false;
     }
     
-    for (uint32_t i = 5; i * i <= n; i += 6)
+    for (uint64_t i = 5; i * i <= n; i += 6)
     {
         if (n % i == 0 || n % (i + 2) == 0)
         {
@@ -36,7 +36,7 @@ bool is_prime(uint32_t n)
 
 int main()
 {
-    uint32_t k = 0;
+    uint64_t k = 0;
     for (int i=1; i<N; i++)
     {
         if ( is_prime(i) )
