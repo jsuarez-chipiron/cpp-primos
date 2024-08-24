@@ -2,7 +2,7 @@
 
 constexpr int nelems = 2000;
 
-bool is_prime(uint64_t n)
+bool is_prime(uint32_t n)
 {
     if (n <= 1)
     {
@@ -19,7 +19,7 @@ bool is_prime(uint64_t n)
         return false;
     }
     
-    for (uint64_t i = 5; i * i <= n; i += 6)
+    for (uint32_t i = 5; i * i <= n; i += 6)
     {
         if (n % i == 0 || n % (i + 2) == 0)
         {
@@ -48,19 +48,15 @@ bool is_prime_mine(int n)
     }
 }
 
-bool is_prime_o2(int n)
+bool is_prime_o2(uint32_t n)
 {
     if (n == 1 || n == 2)
     {
         return true;
     }
-    else if (n % 2 == 0)
-    {
-        return false;
-    }
     else
     {
-        for (int i = 3; i * i <= n; i += 2)
+        for (uint32_t i = 2; i * i <= n; i++)
         {
             if (n % i == 0)
             {

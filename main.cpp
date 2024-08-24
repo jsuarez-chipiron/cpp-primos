@@ -1,12 +1,12 @@
 #include <cstdint>
 #include <iostream>
 
-const int N = 2000000;
+const int N = 200000;
 /*
  * javier suarez jimenez
  */
 
-bool is_prime(uint64_t n)
+bool is_prime(uint32_t n)
 {
     if (n <= 1)
     {
@@ -23,7 +23,7 @@ bool is_prime(uint64_t n)
         return false;
     }
     
-    for (uint64_t i = 5; i * i <= n; i += 6)
+    for (uint32_t i = 5; i * i <= n; i += 6)
     {
         if (n % i == 0 || n % (i + 2) == 0)
         {
